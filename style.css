@@ -24,3 +24,58 @@
     font-size: 24px;
     color: blue;
 }
+
+#wrapper {
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 10px 20px 30px;
+    margin-top: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+#guess {
+    font-size: 42px;
+}
+
+.guessField {
+    margin-top: 20px;
+    padding: 15px 125px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.guessSubmit {
+    padding: 8px 45px;
+    margin-top: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: large;
+}
+
+.guessSubmit:hover {
+    background-color: #0056b3;
+}
+
+.resultParas {
+    margin-top: 50px;
+    padding: 15px 160px;
+}
+
+.resultParas p {
+    margin: 5px 0;
+    font-size: 25px;
+}
