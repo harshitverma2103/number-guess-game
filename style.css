@@ -4,3 +4,23 @@
     font-family: 'Poppins', 'sans-serif';
     box-sizing: border-box;
 }
+
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: #0f1111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.content {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.content marquee {
+    font-size: 24px;
+    color: blue;
+}
