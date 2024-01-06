@@ -28,21 +28,23 @@ function validateGuess(guess) {
         alert('Please enter a number greater than 1!');
     } else if (guess > 100) {
         alert('Please enter a number less than 100!')
-    } else
-        previousGuesses.push(guess);
-    if (numGuesses === 11) {
-        displayGuesses(guess);
-        displayMessage(`Game Over! Number was ${randomNumber}`);
-        endGame();
     } else {
-        displayGuesses(guess);
-        checkGuess(guess);
+        previousGuesses.push(guess);
+        if (numGuesses === 11) {
+            displayGuesses(guess);
+            displayMessage(`Game Over! Number was ${randomNumber}`);
+            endGame();
+        } else {
+            displayGuesses(guess);
+            checkGuess(guess);
+        }
     }
 }
 
 function checkGuess(guess) {
     if (guess === randomNumber) {
         displayMessage(`You guessed correctly!`);
+        endGame();
     } else if (guess < randomNumber) {
         displayMessage(`Too low! Try again!`);
     } else if (guess > randomNumber) {
