@@ -43,7 +43,6 @@ function validateGuess(guess) {
 function checkGuess(guess) {
     if (guess === randomNumber) {
         displayMessage(`You guessed correctly!`);
-        endGame();
     } else if (guess < randomNumber) {
         displayMessage(`Too low! Try again!`);
     } else if (guess > randomNumber) {
@@ -69,5 +68,19 @@ function endGame() {
     p.innerHTML = `<h1 id="newGame">Start New Game</h1>`
     startOver.appendChild(p);
     playGame = false;
-    newGame();
+}
+
+function newGame() {
+    const newGameButton = document.querySelector('#newGame');
+    newGameButton.addEventListener('click', function () {
+        randomNumber = parseInt((Math.random() * 100) + 1);
+        previousGuesses = [];
+        numGuesses = 1;
+        guessSlot.innerHTML = '';
+        lowOrHi.innerHTML = '';
+        remaining.innerHTML = `${11 - numGuesses}  `;
+        userInput.removeAttribute('disabled');
+        startOver.removeChild(p);
+        playGame = true;
+    });
 }
