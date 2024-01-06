@@ -50,3 +50,14 @@ function checkGuess(guess){
         displayMessage(`Too High! Try again!`);
     }
 }
+
+function displayGuesses(guess){
+    userInput.value = '';
+    guessSlot.innerHTML += `${guess}  `;
+    numGuesses++
+    remaining.innerHTML = `${11 - numGuesses}  `;
+}
+
+function displayMessage(message){
+        lowOrHi.innerHTML = `<h1>${message}</h1>`
+}
