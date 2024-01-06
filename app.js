@@ -40,8 +40,8 @@ function validateGuess(guess) {
     }
 }
 
-function checkGuess(guess){
-    if (guess === randomNumber){
+function checkGuess(guess) {
+    if (guess === randomNumber) {
         displayMessage(`You guessed correctly!`);
         endGame();
     } else if (guess < randomNumber) {
@@ -51,13 +51,23 @@ function checkGuess(guess){
     }
 }
 
-function displayGuesses(guess){
+function displayGuesses(guess) {
     userInput.value = '';
     guessSlot.innerHTML += `${guess}  `;
     numGuesses++
     remaining.innerHTML = `${11 - numGuesses}  `;
 }
 
-function displayMessage(message){
-        lowOrHi.innerHTML = `<h1>${message}</h1>`
+function displayMessage(message) {
+    lowOrHi.innerHTML = `<h1>${message}</h1>`
+}
+
+function endGame() {
+    userInput.value = '';
+    userInput.setAttribute('disabled', '');
+    p.classList.add('button');
+    p.innerHTML = `<h1 id="newGame">Start New Game</h1>`
+    startOver.appendChild(p);
+    playGame = false;
+    newGame();
 }
